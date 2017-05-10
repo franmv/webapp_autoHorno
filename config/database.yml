@@ -12,6 +12,17 @@ default: &default
 development:
   <<: *default
   database: db/development.sqlite3
+  
+#mysql_settings: &mysql_settings
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: 5
+#   timeout: 5000
+#   username: [MYSQL_USER] instance usr
+#   password: [MYSQL_PASS] instance usr password
+#   database: [MYSQL_DATABASE]
+#   socket: /cloudsql/igneous-day-156005:us-east1:proyectointegrador-en-ma-17
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

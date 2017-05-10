@@ -35,6 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Use sqlite3 database only for testing purposes
+  gem 'sqlite3'
 end
 
 group :development do
@@ -45,3 +47,8 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  # Use Postgress database for the production environment (decovi)
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end
