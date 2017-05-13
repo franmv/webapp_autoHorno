@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Temperaturas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @temperaturas.each do |temperatura| %>
+      <tr>
+        <td><%= temperatura.valor %></td>
+        <td><%= link_to 'Show', temperatura %></td>
+        <td><%= link_to 'Edit', edit_temperatura_path(temperatura) %></td>
+        <td><%= link_to 'Destroy', temperatura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Temperatura', new_temperatura_path %>

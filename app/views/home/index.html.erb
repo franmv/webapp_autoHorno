@@ -1,11 +1,57 @@
 <div class="jumbotron">
+  
   <h2>Control del Horno</h2>
-  <p>Control del horno de vitrificado de Decovi</p>
-  <p>
+  
+  <p> 
+    Esta sección permite el control del horno de vitrificado. 
+    Se puede iniciar un ciclo de quema para productos de vidrio,
+    para produtos de cerámica.
+  </p>
+  
+  <div class="row">
+      <div class="col-md-12">
+          <div class="panel">
+            
+              <header class="panel-heading">
+                  <div class="panel-actions">
+                    
+                      <%= link_to '',  class: 'panel-action panel-action-toggle' %>
+                  </div>
+                  <h2 class="panel-title"> Temperatura actual </h2>
+
+              </header>
+              
+              <div class="panel-body">
+                  <div class="morris-chart-data">
+                    <%= content_tag(:div, class: 'morris-chart-dat') %>
+                        <morris><%= content_tag(:div, class: 'morris-chart-dat') %></morris>
+                    
+                      </div>
+                  </div>
+              </div>
+              
+          </div>
+      </div>  <!--col end--> 
       
-      <%= link_to 'Vidrio', home_about_path, class: 'btn btn-success' %>
-      <%= link_to 'Cerámica', home_about_path, class: 'btn btn-success' %>
+  <div>
+    <%= link_to 'Vidrio', home_about_path, class: 'btn btn-success' %>
+    <%= link_to 'Cerámica', home_about_path, class: 'btn btn-success' %>
+    <%= link_to 'Paro de emergencia', home_about_path, class: 'btn btn-danger' %>
+  </div>
       
-      <%= link_to 'Paro de emergencia', home_about_path, class: 'btn btn-danger' %>
-    </p>
+      <div>
+    
+        <h3>Funciones</h3>
+      
+        <p>
+          <b>Vidrio:</b> Inicia ciclo de quema para vidrio.           Temp de fusión: 610 ºC   Tiempo de maduración: 80 min <br/>
+          <b>Cerámica:</b> Inicia ciclo de quema con para cerámica.   Temp de fusión: 750 ºC   Tiempo de maduración: 5 min <br/>
+          <b>Paro de emergencia:</b> Interrumpe el ciclo de quema, cierra todas las valvulas de gás incluido el suministro principal, apaga los quemadores y ventiladores.  
+        </p>
+      
+      </div>
+  </div>
 </div>
+
+
+    

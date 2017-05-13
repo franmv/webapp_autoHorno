@@ -1,0 +1,1 @@
+json.partial! "temperaturas/temperatura", temperatura: @temperatura

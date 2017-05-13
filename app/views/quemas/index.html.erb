@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Historial de quemas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quemas.each do |quema| %>
+      <tr>
+        <td><%= quema.estado %></td>
+        <td><%= link_to 'Ver', quema %></td>
+        <td><%= link_to 'Editar', edit_quema_path(quema) %></td>
+        <td><%= link_to 'Destroy', quema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Quema', new_quema_path %>

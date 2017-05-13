@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :tipos
+  resources :equipos
+  resources :temperaturas
+  resources :fases
+  resources :materiales
+  resources :quemas
+  devise_for :users
   root 'home#index'
   get 'home/about'
 

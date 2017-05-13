@@ -1,3 +1,20 @@
+<div class="top-bar-dark">            
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-right">
+                <ul class="list-inline top-dark-right">
+                <% if user_signed_in? %>
+                  <li><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                  <li><%= link_to 'Iniciar Sesión', new_user_session_path %></li>
+                  <li><%= link_to 'Registro', new_user_registration_path %></li>
+                <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 <nav class="navbar navbar-default">
     
   <div class="container">
@@ -5,13 +22,14 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" >
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
       
+      <!-- Nombre de la empresa, link a homepage> -->
       <%= link_to 'Decovi', root_path, class:"navbar-brand" %>
     
     </div>
@@ -19,15 +37,33 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         
-        <ul class="nav navbar-nav">
-            <li><%= link_to 'Home', root_path %></li>
-            <li><%= link_to 'About Us', home_about_path %></li>
+        <ul class="nav navbar-nav navbar-right" >
+            <li class="drowpdown"><%= link_to 'Inicio', root_path %></li>
+            <li class="drowpdown"><%= link_to 'El Proyecto', home_about_path %></li>
+          
+            <% if user_signed_in? %>
+              
+              <li class="drowpdown"><%= link_to 'Horno', quemas_path %></li>
+              <li class="dropdown">
+              
+                <!-- Dorpdown nombre: adminsitrar-->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrar</a>
+                <!-- Dorpdown contenido: Editar-->
+                <ul class="dropdown-menu" role="menu">
+                  <li><%= link_to 'Materiales', materiales_path %></li>
+                  <li><%= link_to 'Fases', fases_path %></li>
+                  <li><%= link_to 'Equipos', equipos_path %></li>
+                  <li><%= link_to 'Tipos', tipos_path %></li>
+                  
+                </ul>
+              
+              </li>
+              
+            <% end %>
         </ul>
     
     </div><!-- /.navbar-collapse -->
   
-  </div><!-- /.container-fluid -->
+  </div><!-- /.container -->
 
 </nav>
-    
-         

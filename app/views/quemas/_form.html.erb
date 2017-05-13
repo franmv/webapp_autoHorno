@@ -1,0 +1,21 @@
+<%= form_for(@quema) do |f| %>
+  <% if @quema.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quema.errors.count, "error") %> prohibited this quema from being saved:</h2>
+
+      <ul>
+      <% @quema.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.check_box :estado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
